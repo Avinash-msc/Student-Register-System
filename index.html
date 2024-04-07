@@ -19,10 +19,55 @@
 
 <body>
     <header>
-
+        <h1 class="title">Student Records Management</h1>
+        <p class="subtitle">A system where student records be managed</p>
     </header>
     <main>
-        
+        <!-- Registration Form -->
+        <section>
+            <form method="post" id="student-register-form">
+                <h2>Enrollment Form</h2>
+                <!-- [ ] todo: add icons before input -->
+                <div class="form-element">
+                    <input type="text" name="studentName" id="stuName" pattern="^[A-Za-z]+$"
+                        title="Only letters Allowed" required>
+                    <label for="stuName">student name</label>
+                </div>
+                <div class="form-element">
+                    <input type="number" name="studentId" id="stuID" required>
+                    <label for="stuID">student id</label>
+                </div>
+                <div class="form-element">
+                    <input type="email" name="studentEmail" id="stuEmail" required>
+                    <label for="stuEmail">email id</label>
+                </div>
+                <div class="form-element">
+                    <input type="tel" name="studentContact" id="stuContact" required>
+                    <label for="stuContact">contact no.</label>
+                </div>
+                <div class="form-element">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+        <!-- Display Section For Records -->
+        <section>
+            <table id="records">
+                <caption>
+                    <h2>Student Records</h2>
+                </caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
     </main>
 </body>
 
