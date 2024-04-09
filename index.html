@@ -29,12 +29,12 @@
                 <h2>Enrollment Form</h2>
                 <!-- [ ] todo: add icons before input -->
                 <div class="form-element">
-                    <input type="text" name="studentName" id="stuName" pattern="^[A-Za-z]+$"
-                        title="Only letters Allowed" required>
+                    <input type="text" name="studentName" id="stuName" pattern="^[A-Za-z]+(\s[A-Za-z]+)*$"
+                        title="Only letters allowed!!! Don't use space at the start & end." required>
                     <label for="stuName">student name</label>
                 </div>
                 <div class="form-element">
-                    <input type="number" name="studentId" id="stuID" required>
+                    <input type="number" name="studentId" id="stuID" min="0" required>
                     <label for="stuID">student id</label>
                 </div>
                 <div class="form-element">
@@ -42,11 +42,12 @@
                     <label for="stuEmail">email id</label>
                 </div>
                 <div class="form-element">
-                    <input type="tel" name="studentContact" id="stuContact" required>
+                    <input type="tel" name="studentContact" id="stuContact" min="0" pattern="^[6-9][0-9]{9,10}$" title="Enter a valid contact !!!" required>
                     <label for="stuContact">contact no.</label>
                 </div>
                 <div class="form-element">
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="submit-btn">Submit</button>
+                    <button type="reset">Reset</button>
                 </div>
             </form>
         </section>
