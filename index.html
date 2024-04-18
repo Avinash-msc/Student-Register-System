@@ -2,20 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Registration</title>
     <!-- Frontawesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
-    <!-- Tailwind CSS -->
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <!-- Other Imports -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
+
 
 <body>
     <header>
@@ -24,50 +23,70 @@
     </header>
     <main>
         <!-- Registration Form -->
-        <section>
-            <form method="post" id="student-register-form">
-                <h2>Enrollment Form</h2>
-                <!-- [ ] todo: add icons before input -->
+        <section id="form-sec" class="card hide">
+            <form id="student-register-form">
+                <header class="card">
+                    <h2>Enrollment Form</h2>
+                    <i class="btn icon fas fa-times-circle" id="close-btn"><span class="sr-only">Close</span></i>
+                </header>
+                <fieldset>
+                    <legend>Student Details</legend>
+                    <!-- [ ] todo: add icons before input -->
+                    <div class="form-element">
+                        <span class="icon fas fa-id-card"></span>
+                        <input type="number" name="id" id="stuID" placeholder=" " />
+                        <label for="stuID">Student ID</label>
+                        <p class="info"></p>
+                    </div>
+                    <div class="form-element">
+                        <span class="icon fas fa-user-tie"></span>
+                        <input type="text" name="name" id="stuName" placeholder=" " />
+                        <label for="stuName">Student Name</label>
+                        <p class="info"></p>
+                    </div>
+                    <div class="form-element">
+                        <span class="icon fas fa-at"></span>
+                        <input type="email" name="email" id="stuEmail" placeholder=" " />
+                        <label for="stuEmail">Email</label>
+                        <p class="info"></p>
+                    </div>
+                    <div class="form-element">
+                        <span class="icon fas fa-phone-alt"></span>
+                        <input type="tel" name="contact" id="stuContact" placeholder=" " />
+                        <label for="stuContact">Contact</label>
+                        <p class="info"></p>
+                    </div>
+                </fieldset>
                 <div class="form-element">
-                    <input type="text" name="studentName" id="stuName" pattern="^[A-Za-z]+(\s[A-Za-z]+)*$"
-                        title="Only letters allowed!!! Don't use space at the start & end." required>
-                    <label for="stuName">student name</label>
-                </div>
-                <div class="form-element">
-                    <input type="number" name="studentId" id="stuID" min="0" required>
-                    <label for="stuID">student id</label>
-                </div>
-                <div class="form-element">
-                    <input type="email" name="studentEmail" id="stuEmail" required>
-                    <label for="stuEmail">email id</label>
-                </div>
-                <div class="form-element">
-                    <input type="tel" name="studentContact" id="stuContact" min="0" pattern="^[6-9][0-9]{9,10}$" title="Enter a valid contact !!!" required>
-                    <label for="stuContact">contact no.</label>
-                </div>
-                <div class="form-element">
-                    <button type="submit" id="submit-btn">Submit</button>
-                    <button type="reset">Reset</button>
+                    <button class="btn" type="button" id="submit-btn">Submit</button>
                 </div>
             </form>
         </section>
         <!-- Display Section For Records -->
-        <section>
-            <table id="records">
-                <caption>
-                    <h2>Student Records</h2>
-                </caption>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Contact</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+        <section id="display">
+            <div class="card">
+                <h2 class="subtitle">Student Records :</h2>
+                <div>
+                    <button title="Add New Record" id="add-rec-btn" class="btn">
+                        <i class="icon fas fa-plus-square"><span class="sr-only">Add New Record</span></i>
+                    </button>
+                    <button title="Delete All Records" id="del-all-btn" class="btn">
+                        <i class="icon fas fa-trash-alt"><span class="sr-only">Delete All</span></i>
+                    </button>
+                </div>
+            </div>
+            <div id="records">
+                <div class="gridRow">
+                    <div class="id-col"><strong>ID</strong></div>
+                    <div class="name-col"><strong>Name</strong></div>
+                    <div class="email-col"><strong>Email</strong></div>
+                    <div class="contact-col"><strong>Contact</strong></div>
+                    <div class="action-col"><strong>Actions</strong></div>
+                </div>
+                <div id="table">
+
+                </div>
+            </div>
         </section>
     </main>
 </body>
