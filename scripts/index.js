@@ -115,6 +115,7 @@ function handleSubmit(event) {
     reset();
     if (isUpdated) {
       showData();
+      showDelayAlert("Record updated successfully !!!");
     }
   }
 }
@@ -140,7 +141,7 @@ delAllBtn.onclick = () => {
   if (confirm("Do you really want to delete all the records ?")) {
     updateData(0, data.length);
     showData();
-    alert("All Records Deleted Succeessfully !!!");
+    showDelayAlert("All Records Deleted Succeessfully !!!");
   }
 };
 
