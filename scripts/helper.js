@@ -20,6 +20,17 @@ function showData() {
 }
 
 /**
+ * show alert message after some time
+ * @param {string} msg alert message
+ * @param {number} ms  microsecond
+ */
+const showDelayAlert = (msg, ms = 100) => {
+  setTimeout(() => {
+    alert(msg);
+  }, ms);
+};
+
+/**
  * show or hides the enrollment form
  * @returns {boolean}
  */
@@ -114,8 +125,8 @@ const deleteRecord = (id) => {
     table.querySelector(`#stuRec-${id}`).remove();
     updateData(index, 1);
     scrollRecord();
-    alert("Record Deleted Successfully !!!");
     if (!data.length) showData();
+    showDelayAlert("Record Deleted Successfully !!!");
   }
 };
 
