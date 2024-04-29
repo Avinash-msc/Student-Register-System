@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
-    --title-font-size: 2.5rem;
-    --subtitle-font-size: 1.5rem;
-    --form-font-size: 1.3em;
+    --title-font-size: 3rem;
+    --subtitle-font-size: 2rem;
 }
 
 * {
@@ -27,7 +28,7 @@ header {
 
 header,
 h2 {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: normal;
 }
 
@@ -39,6 +40,7 @@ h2 {
 
 .title {
     font-size: var(--title-font-size);
+    text-decoration: overline underline;
     text-shadow: 0 0 4px aliceblue;
 }
 
@@ -86,7 +88,7 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    backdrop-filter: blur(0.5em);
+    background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
 }
@@ -117,7 +119,7 @@ fieldset {
 legend {
     font-size: 1.2em;
     margin: 0.2em;
-    color:#4c0697;
+    color: #4c0697;
     text-shadow: 0 0 2px white;
     letter-spacing: 2px;
     font-weight: bold;
@@ -164,12 +166,12 @@ input:not(:placeholder-shown)+label {
     transform: scale(0.9) translateY(-1.5rem);
 }
 
-input:focus{
+input:focus {
     color: whitesmoke;
     text-shadow: 0 0 2pt black;
 }
 
-input:not(:focus):not(:focus-within):invalid{
+input:not(:focus):not(:focus-within):invalid {
     border-color: red;
     text-shadow: 0 0 4px red;
 }
@@ -184,13 +186,15 @@ input {
     padding: 0.3em;
 }
 
-input, label{
+input,
+label {
     display: block;
     font-size: 1.2em;
     font-weight: bold;
     letter-spacing: 2px;
     padding-left: 2em;
 }
+
 .btn {
     cursor: pointer;
     font-size: 1em;
@@ -272,7 +276,6 @@ div:has(.btn) {
 }
 
 #display h2.subtitle {
-    align-self: start;
     text-decoration: underline;
 }
 
@@ -282,7 +285,7 @@ div:has(.btn) {
     max-height: 60vh;
     position: relative;
     font: 500 1.25em Roboto, 'Arial', 'Open Sans', sans-serif;
-    background-color: rgba(0,0,0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .gridRow {
@@ -290,6 +293,7 @@ div:has(.btn) {
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
     margin: .2em;
     padding: .2em 0;
+    border-bottom: 1px solid;
 }
 
 #records>.gridRow {
@@ -297,7 +301,7 @@ div:has(.btn) {
     top: 0;
     z-index: 2;
     background-color: rgb(151, 47, 47);
-    color:whitesmoke;
+    color: whitesmoke;
     border-radius: 0 0 1em 1em;
 }
 
@@ -307,7 +311,7 @@ div:has(.btn) {
 }
 
 .gridRow div {
-    text-shadow: 0 0 1px rgb(233, 207, 207);
+    text-shadow: 0 0 4px rgb(233, 207, 207);
     text-align: center;
     padding: .2em;
     align-content: center;
@@ -317,6 +321,12 @@ div:has(.btn) {
     word-break: break-all;
 }
 
+@media (max-width: 1024px){
+    :root{
+        --title-font-size: 2.5rem;
+        --subtitle-font-size:1.5rem;
+    }
+}
 
 @media (max-width: 640px) {
     .gridRow {
@@ -348,4 +358,19 @@ div:has(.btn) {
         grid-area: a;
     }
 
+}
+
+@media (max-width: 480px) {
+    :root {
+        --title-font-size:2rem;
+        --subtitle-font-size:1.3rem;
+    }
+
+    header{
+        margin-bottom: 0;
+    }
+
+    .title{
+        text-decoration: underline;
+    }
 }
