@@ -11,10 +11,10 @@
         crossorigin="anonymous" />
     <!-- Other Imports -->
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js" defer></script>
+    <script src="./scripts/helper.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
-
 
 <body>
     <header>
@@ -25,40 +25,38 @@
         <!-- Registration Form -->
         <section id="form-sec" class="card hide">
             <form id="student-register-form">
-                <header class="card">
-                    <h2>Enrollment Form</h2>
-                    <i class="btn icon fas fa-times-circle" id="close-btn"><span class="sr-only">Close</span></i>
-                </header>
+                <div class="card">
+                    <h2 class="subtitle">Enrollment Form</h2>
+                    <i class="btn icon fas fa-times-circle" id="close-btn">
+                        <span class="sr-only">Close</span>
+                    </i>
+                </div>
                 <fieldset>
                     <legend>Student Details</legend>
-                    <!-- [ ] todo: add icons before input -->
                     <div class="form-element">
                         <span class="icon fas fa-id-card"></span>
                         <input type="number" name="id" id="stuID" placeholder=" " />
                         <label for="stuID">Student ID</label>
-                        <p class="info"></p>
                     </div>
                     <div class="form-element">
                         <span class="icon fas fa-user-tie"></span>
                         <input type="text" name="name" id="stuName" placeholder=" " />
                         <label for="stuName">Student Name</label>
-                        <p class="info"></p>
                     </div>
                     <div class="form-element">
                         <span class="icon fas fa-at"></span>
                         <input type="email" name="email" id="stuEmail" placeholder=" " />
                         <label for="stuEmail">Email</label>
-                        <p class="info"></p>
                     </div>
                     <div class="form-element">
                         <span class="icon fas fa-phone-alt"></span>
-                        <input type="tel" name="contact" id="stuContact" placeholder=" " />
+                        <input type="tel" name="contact" id="stuContact" placeholder=" " minlength="10"
+                            maxlength="10" />
                         <label for="stuContact">Contact</label>
-                        <p class="info"></p>
                     </div>
                 </fieldset>
                 <div class="form-element">
-                    <button class="btn" type="button" id="submit-btn">Submit</button>
+                    <button class="btn" type="submit" id="submit-btn">Submit</button>
                 </div>
             </form>
         </section>
@@ -84,7 +82,6 @@
                     <div class="action-col"><strong>Actions</strong></div>
                 </div>
                 <div id="table">
-
                 </div>
             </div>
         </section>
